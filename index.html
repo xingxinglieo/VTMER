@@ -3,8 +3,226 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
+		<style>
+			ul{list-style-type: none;}
+			 a{text-decoration: none;color: black;}
+			*{margin: 0;padding: 0;border: none;letter-spacing: 0.125rem;}/*清除所有元素自带的margin和padding属性以便调整*/
+			.limit{width: 75rem;margin: 0 auto;}/*设置所有大模块元素宽度相同并居中*/
+			/*top*/
+			#top{background-color:#3b3c3c;color: white;}
+			#top_content span{vertical-align: 0.8125rem;}/*调整垂直距离使其居中*/
+			
+			/*one*/
+			#one ul{width:34.375rem;display: table ;float: right;margin-top: 2.8125rem ;list-style-type: none;font-weight: 800;}
+			#one li{display: table-cell;}/*display li ul父子元素配合 转化为表格模式使其可以横向显示并均匀分配空间*/
+			/*two*/
+			#two{height:9.375rem;padding-top: 15.625rem;background-image:url(img/timg%20副本.png) ;background-size: cover ;}/*有背景图的需要多设一个包含,并在父元素上加padding-top */
+			#two_content{margin-left: 34.375rem;}
+			#two ul{}
+			#two li{float: left;padding-right: 0.1875rem;padding-left: 0.1875rem;font-size: 0.8rem;height: 1.25rem;}
+			#two a{color: white;font-size: small;}
+			#two li+li{border-left:0.125rem solid white ;}
+			.btm:hover{cursor:pointer;}
+			/*three*/
+			#three ul{width: 9.375rem;vertical-align: 0.625rem;}
+			#three li+li{border-top:0.3125rem solid gray;}
+			#three li{height:1.25rem;text-align:center;color:#FFFFFF;background-color:#1d9f9f;padding: 0.625rem;font-weight: 800;}//*不是在navl里面使用textalign而是在li里面*//*字不变色是怎么回事 ？*/
+			#three_content{height: 20rem;}
+			.three_text{position:absolute;top:2.95rem;left:12.4%;width:65.625rem;height: 15.625rem;background-color:#1d9f9f;color: white;border: 0.125rem solid #808080;}
+			#three{position: relative;height: 21.5rem;}
+			.three_c{float: left;width: 36.6rem;}
+			.three_img{float: left;width:28rem;height: 15.625rem;margin-right: 1rem;}
+			#text_two{display: none;}
+			#text_three{display: none;}
+			#text_four{display: none;}
+			.nav:hover{cursor: pointer;}
+			/*four */
+			.white{float: left;width:18.75rem;height:6.25rem;background-color: white; position: relative;}
+			.black{float: left;width:18.75rem;height:6.25rem;background-color: #483e3e;color: white;position: relative;}
+			#four img{position: absolute;top: 31%;}
+			.four_content{float:right; width:15.625rem;height: 6.25rem;}
+			#four h2{margin-top: 1.5625rem;margin:0.625rem;}
+			
+		</style>
+		<script>
+			window.onload=function()
+			{
+				var li=document.querySelectorAll("#three li");
+				var text=document.querySelectorAll(".three_text")
+				var mark=0;
+				li[0].onclick=function()
+				{
+					text[1].style.display="none";
+					text[2].style.display="none";
+					text[3].style.display="none";
+					text[0].style.display="block";
+					li[mark].style.backgroundColor="#1d9f9f";
+					li[mark].style.color="white";
+					li[0].style.backgroundColor="white";
+					li[0].style.color="black";
+					mark=0;
+				}
+				li[1].onclick=function()
+				{
+					text[0].style.display="none";
+					text[2].style.display="none";
+					text[3].style.display="none";
+					text[1].style.display="block";
+					li[mark].style.backgroundColor="#1d9f9f";
+					li[mark].style.color="white";
+					li[1].style.backgroundColor="white";
+					li[1].style.color="black";
+					mark=1;
+				}
+				li[2].onclick=function()
+				{
+					text[1].style.display="none";
+					text[0].style.display="none";
+					text[3].style.display="none";
+					text[2].style.display="block";
+					li[mark].style.backgroundColor="#1d9f9f";
+					li[mark].style.color="white";
+					li[2].style.backgroundColor="white";
+					li[2].style.color="black";
+					mark=2;
+				}
+				li[3].onclick=function()
+				{
+					text[1].style.display="none";
+					text[2].style.display="none";
+					text[0].style.display="none";
+					text[3].style.display="block";
+					li[mark].style.backgroundColor="#1d9f9f";
+					li[mark].style.color="white";
+					li[3].style.backgroundColor="white";
+					li[3].style.color="black";
+					mark=3;
+				}
+				var QR=document.querySelector("#QR");
+				var content=document.querySelectorAll(".QR");
+				QR.onmouseover=function()
+				{
+					content[0].style.display="block";
+					content[1].style.display="block";
+				}
+				QR.onmouseout=function()
+				{
+					content[0].style.display="none";
+					content[1].style.display="none";
+				}
+			}
+		</script>
 	</head>
 	<body>
-		
+		<div id="top">
+			<div class="limit" id="top_content">
+				<img src="img/phone.jpg"/>
+				<span>020-310-41987</span>
+				<img src="img/mail.jpg"/>
+				<span>chn_mahone＠163.com＠163.com</span>
+				<span style="margin-left: 13.75rem;">欢迎来到热泉港!</span>
+				<div id="" style="display:inline-block;float: right;"><!--以下内容浮动向右 -->
+				<img src="img/man.jpg"/>
+				<span style=><a href="" style="color: white;margin-right: 1.25rem;">登陆</a><a href="" style="color: white;">注册</a></span>
+				</div>
+				
+			</div>
+			
+		</div>
+		<div id="one" class="limit">
+			<img src="img/logo.jpg" >
+			<div style="display: inline-block;vertical-align: 2.3125rem;">
+				<h1>热泉港</h1>
+				<p style="font-weight: 800;">生命科学仪器试剂耗材经销商</p>
+			</div>
+			<ul>
+				<li><a href="">Ychine首页</a> </li>
+				<li><a href="">公司简介</a> </li>
+				<li><a href="">人才招聘</a> </li>
+				<li><a href="">公告通知</a> </li>
+				<li><a href="">联系我们</a> </li>
+			</ul>
+		</div>
+		<div id="two">
+			<div id="two_content" class="limit">
+			
+				<input type="button" value="名称搜索" class="btm" style="color: white;height: 2.6375rem;width: 6.25rem;margin-right: -0.33125rem;position: relative;top: 0.05625rem;background:#1d9f9f;"/>
+				<input type="text" placeholder="输入你想要的产品名称" style="height:2.6125rem" size="50rem"/>
+				<div style="height: 0.625rem;"></div>
+				<input type="button" value="全部搜索" class="btm" style="color:white;height: 2.6375rem;width: 6.25rem;margin-right: -0.33125rem;position: relative;top: 0.05625rem;background:#1d9f9f;"/>
+				<input type="text" placeholder="输入你想要的产品分类,型号" style="height:2.6125rem" size="50rem"/>
+				<div style="height: 0.625rem;"></div>
+			    
+				<ul>
+					<li style="color: white;">HOT关键词:&nbsp;</li>
+					<li style="border: none;"><a href="">灭菌剂</a></li><li><a href="">离心管</a></li><li><a href="">手套</a></li><li><a href="">Ph计</a></li>
+					<li><a href="">活性口罩</a></li><li><a href="">滤纸</a></li><li><a href="">胶头</a></li><li><a href="">三角架</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="three" class="limit" style="border-bottom:0.3125rem solid gray">
+			<div id="three_title" style="color: #1d9f9f;text-align: center;font-size:1.75rem;font-weight: 900;margin:2.5rem 0rem 0.625rem 0rem;">
+				/ 更多资讯 /
+			</div>
+			<div id="three_content">
+				<ul>
+					<li style="background:white;color: black;border-top: 0.125rem solid #808080;"><div class="nav">尖端科技</div></li>
+					<li><div class="nav">国际研讨会</div></li>
+					<li><div class="nav">食药资讯</div></li>
+					<li style="border-bottom:0.3125rem solid gray;"><div class="nav">最新应用</div></li>
+				</ul>
+				<div class="three_text" id="text_one">
+					<img class="three_img" src="img/1.1.jpg">
+					<div class="three_c"><h3>cfDNAS与液体活检</h3>
+随着“液体活检”的兴起，循环游离DNA（CfDA）的应用越来越多。例如在临床上应用于辅助诊断癌症、预测和监测癌症药物治疗效果、鉴别胎儿机体异常、评估移植器官的健康性等。
+但是由TcfDNA于在血液中含量非常低，抽提得率低，传统方法往往是通过增大血液上样量来满足下游实验需求，但是实际上能从孕妇和病人处得到的样本量是有限的。那么如何提高得率、从体积有限的临床血液样本中获取足够多的JcfDNA和更多信息呢？此外，传统方法提取的 Aj通常是150-200bp左右的细胞凋亡产生的cfNA，其实还有一部分少量存在的长片段 cfDNA被漏掉了，而这一部分对于后续疾病监测是非常有用的，如检测癌症患者是否存在耐药性突变等。</div>
+				</div>
+				<div class="three_text" id="text_two">
+					<img class="three_img" src="img/2.2.jpg" >
+					<div class="three_c"><h3>国际研讨会</h3>
+					临床分子病理与人组织标本库； 分子免疫与标记示踪； 干细胞纯化和应用； 临床生物信息学与生物靶标； 生物技术与转化医学。 CIB2012主要交流形式包括：
+最新科研成果大会交流； 科技需求和项目介绍会； 最新技术和产品圆桌会； 科技管理高端对话会。CIB2012 is an international meeting and platform for scientists from both academies and companies to communicate advanced biotechnologies and instrumentations in clinical research. CIB2012 acts as a bridge between academics and companies to understand the development and potential of advanced biotechnologies and instrumentations for commercialization and clinical application.
+					</div>
+				</div>
+				<div class="three_text" id="text_three">
+					<img class="three_img" src="img/3.1.jpg" >
+					<div class="three_c"><h3>突破离子通道与离子转运蛋白研究瓶颈的靶药研发方法</h3>
+						Aurora的非放射性Flux Assay以及ICR离子通道阅读器，能很好的为离子通道/转运蛋白的靶药开发，提供一个高质量、高通量的筛选研究平台，尤其是针对某些电中性的目标。而且实验验证，该方法的数据与其他检测研究方法数据吻合，很好地反映化合物对目标通道/转运蛋白作用的效果。文章中也对放射性Flux Assay、Tl+敏感的荧光染料指示剂以及Aurora非放射性Flux
+						三种离子通道研究方法进行了总结，发现无论从细胞毒性、结果准确性还是操作安全性上，Aurora的非放射性Flux Assay都更胜一筹。
+					</div>
+				</div>
+				<div class="three_text" id="text_four">
+					<img class="three_img" src="img/4.4.jpg" >
+					<div class="three_c"><h3>追踪金枪鱼：SMRT测序帮助拯救“海洋王者”</h3>
+					与现有的来自日本科学家们，基于短读长测序技术获得的太平洋金枪鱼（T. orientalis）基因组相比，通过PacBio SMRT测序技术得到的数据，具有更强的连续性，碎片信息大为减少。通过组装，生成了约2,000个Contig。这相对于日本科学家们所得到的16,802个Contig，减少了8倍多。Paul Peluso博士认为SMRT测序技术获得的高质量组装数据更加有利于人们寻找金枪鱼物种之间的基因组差异，从而用于开发探针或标记物，进而方便在全球范围内对这些物种进行分类。
+
+						
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div id="four" class="limit">
+			<div class="white"><img src="img/document.jpg"><div class="four_content"><h2>大量现货</h2><div class="char">4点前下单当天发货</div></div></div>
+			<div class="white"><img src="img/buyying.jpg"><div class="four_content"><h2>满500免运费</h2><div class="char">部分地区满500免运费</div></div></div>
+			<div class="black"><img src="img/clock.jpg" > <div class="four_content"><h2>价格低</h2><div class="char">力求最适合得产品最优得价格</div></div></div>
+			<div class="black"><img src="img/cretid.jpg" ><div class="four_content"><h2>货期短</h2><div class="char">专人负责专业跟进提高效率</div></div></div>
+			<div class="white"> <img src="img/1_39.jpg" ><div class="four_content"><h2>增值税专用发票</h2><div class="char">可提供增值税专用发票</div></div></div>
+			<div class="white"><img src="img/1_27.jpg" ><div class="four_content"><h2>快捷配送</h2><div class="char">一件即发享受快捷服务</div></div></div>
+			<div class="black"> <img src="img/1_41.jpg" ><div class="four_content"><h2>品种多</h2><div class="char">商品种类涵盖多个领域</div></div></div>
+			<div class="black"> <img src="img/1553424135(1).jpg"><div class="four_content"><h2>包退换</h2><div class="char">有质量或功能问题包退换
+			</div></div> </div>
+		</div>
+		<div id="fixed" style="position: fixed;top:20%;left:90% ;">
+			<div class="fixed" id="QR" style="position: relative;">
+				<img src="img/1_03.jpg"/>
+				<div class="QR" style="display: none;width: 0;height: 0;border-left: 1.125rem solid #1d9f9f;border-bottom: 0.625rem solid transparent;border-top: 0.625rem solid transparent;position: absolute;left: -1.25rem;top:2rem;">
+				</div>
+				<div class="QR" style="display: none;position: absolute;left: -12.5rem;top:-3rem;background: #1D9F9F;border-radius:1rem;border:1rem solid #1D9F9F;color: white;text-align: center;"><img src="img/WJC52DG(2%7DFCM0KZ%602GXSEX.png" style="height:9.375rem;width: 9.375rem;"/><p>师兄师姐加我吧</p></div>
+			</div>
+			<div class="fixed"><a href="" target="_blank"><img src="img/1_05.jpg"/></a></div>
+		    <div class="fixed"><a href="#top"><img src="img/1_07.jpg"/></a></div>
+		</div>
 	</body>
-</html>
+	
+	
+</html>2
